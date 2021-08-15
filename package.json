@@ -2,10 +2,11 @@
   "name": "travel-app",
   "version": "1.0.0",
   "description": "Travel Application - Udacity capstone",
-  "main": "index.js",
+  "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server/server.js"
+    "start": "node src/server/server.js",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,11 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2"
   }
 }
