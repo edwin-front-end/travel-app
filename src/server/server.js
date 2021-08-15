@@ -12,11 +12,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // convert data to json
 app.use(bodyParser.json());
 //initialize the main project folder
-app.use(express.static("website"));
+app.use(express.static("dist"));
 // run the server
 const port = 3000;
 app.listen(port, (req, res) => {
     console.log(`server is running on port ${port}`);
+});
+
+app.get("/", (req, res) => {
+    res.sendFile("dist");
 });
 // endpoint to store data
 let projectData = {};
