@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
     "build-dev": "webpack serve --config webpack.dev.js --open",
-    "build": "webpack",
+    "build-prod": "webpack --config webpack.prod.js",
     "watch": "webpack --watch"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "@babel/preset-env": "^7.15.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",
