@@ -1,3 +1,43 @@
+:root {
+    font-size: 62.5%;
+    --space-cadet: #2a324b;
+    --peach-crayola: #f7c59f;
+    --rhythm: #767b91;
+    --light-periwinkle: #c7ccdb;
+    --alice-blue: #e1e5ee;
+    --alternative-space-cadet: #2a324b;
+}
+
 body {
     font-family: "Nunito", sans-serif;
+}
+
+.logo {
+    font-family: "Lobster", cursive;
+    font-size: 4.2rem;
+}
+
+h1 {
+    font-size: 4.2rem;
+    font-weight: 900;
+    color: var(--alternative-space-cadet);
+}
+
+h2 {
+    font-size: 3.6rem;
+    font-weight: 900;
+    color: var(--alternative-space-cadet);
+}
+
+h3 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--alternative-space-cadet);
+}
+
+p,
+span {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--rhythm);
 }
