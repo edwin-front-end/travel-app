@@ -1,28 +1,27 @@
-// Dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
-// create an instance of express
+
+const dotenv = require("dotenv");
+dotenv.config();
+
 const app = express();
-// cors for cross origin allowance
 const cors = require("cors");
 const { request } = require("express");
+
 app.use(cors());
-// configuring express to use body-parser as a middleware
 app.use(bodyParser.urlencoded({ extended: false }));
-// convert data to json
 app.use(bodyParser.json());
-//initialize the main project folder
 app.use(express.static("dist"));
-// run the server
+
 const port = 3000;
 app.listen(port, (req, res) => {
     console.log(`server is running on port ${port}`);
 });
 
 app.get("/", (req, res) => {
-    res.sendFile("dist");
+    res.sendFile("dist/index.html");
 });
-// endpoint to store data
+
 let projectData = {};
 
 // request data to the openWeatherAPI
