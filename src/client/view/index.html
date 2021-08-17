@@ -27,26 +27,26 @@
                 <!-- *** *** *** Form *** *** *** -->
                 <form class="plan-form" action="">
                     <h1>Start planning your trip</h1>
+                    <label for="input-location">Location</label>
                     <input
                         class="input"
                         type="text"
                         name="input-location"
                         value=""
-                        placeholder="Location"
                     />
+                    <label for="input-arrival-date">Arrival date</label>
                     <input
                         class="input"
                         type="date"
                         name="input-arrival-date"
                         value=""
-                        placeholder="Arrival date"
                     />
+                    <label for="input-departure-date">Departure date</label>
                     <input
                         class="input"
                         type="date"
                         name="input-departure-date"
                         value=""
-                        placeholder="Departure date"
                     />
                     <button type="submit" class="btn btn-trip-plan">
                         SUBMIT
@@ -57,9 +57,40 @@
             <!-- *** *** *** Travel information section *** *** *** -->
 
             <section class="travel-information-section">
-                <h2>Your trip plan</h2>
+                <h2 id="trip-plan-header">Your trip plan</h2>
                 <div class="card-container">
-                    <img src="" alt="" />
+                    <img src="../../../assets/Group 105@2x.svg" alt="" />
+                    <div class="card-info">
+                        <h3>Destination: ${destination to reach}</h3>
+                        <p>Date arrival:</p>
+                        <p>Date departure</p>
+                        <span class="forecast-data">Sunny</span>
+                        <span class="degrees-data">26°</span>
+                        <img
+                            class="icon"
+                            src="../../../assets/light_mode_black_24dp.svg"
+                            alt="icon-sun"
+                        />
+                    </div>
+                </div>
+                <div class="card-container">
+                    <img src="../../../assets/Group 105@2x.svg" alt="" />
+                    <div class="card-info">
+                        <h3>Destination: ${destination to reach}</h3>
+                        <p>Date arrival:</p>
+                        <p>Date departure</p>
+                        <span class="forecast-data">Sunny</span>
+                        <span class="degrees-data">26°</span>
+                        <img
+                            class="icon"
+                            src="../../../assets/light_mode_black_24dp.svg"
+                            alt="icon-sun"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <img src="../../../assets/Group 105@2x.svg" alt="" />
                     <div class="card-info">
                         <h3>Destination: ${destination to reach}</h3>
                         <p>Date arrival:</p>
@@ -76,7 +107,7 @@
             </section>
         </main>
         <footer>
-            <p class="footer-text">Web-Application develop by: Edwin Mensah</p>
+            <p id="footer-text">Web-Application develop by: Edwin Mensah</p>
         </footer>
 
         <script src="bundle.js"></script>
