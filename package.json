@@ -5,7 +5,7 @@
   "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",
+    "start": "nodemon src/server/server.js",
     "build-dev": "webpack serve --config webpack.dev.js --open",
     "build-prod": "webpack --config webpack.prod.js",
     "watch": "webpack --watch"
@@ -40,6 +40,7 @@
     "style-loader": "^3.2.1",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.7.2",
+    "webpack-dev-middleware": "^3.7.3",
     "webpack-dev-server": "^3.11.2"
   }
 }
