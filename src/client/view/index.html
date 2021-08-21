@@ -48,7 +48,12 @@
                         name="input-departure-date"
                         value=""
                     />
-                    <button type="submit" class="btn btn-trip-plan">
+                    <button
+                        type="submit"
+                        class="btn btn-trip-plan"
+                        onclick="return Client.tripPlanner(event)"
+                        onsubmit="return Client.tripPlanner(event)"
+                    >
                         SUBMIT
                     </button>
                 </form>

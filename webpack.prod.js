@@ -1,15 +1,15 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
     mode: "production",
     devtool: "inline-source-map",
     entry: "./src/client/index.js",
     output: {
-        libraryTarget: "var",
-        library: "Client",
+        filename: "bundle.js",
+        path: path.resolve(__dirname, "dist"),
+        publicPath: "/",
     },
 
     module: {
@@ -34,15 +34,6 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./src/client/view/index.html",
             filename: "./index.html",
-        }),
-        new CleanWebpackPlugin({
-            // Simulate the removal of files
-            dry: true,
-            // Write Logs to Console
-            verbose: true,
-            // Automatically remove all unused webpack assets on rebuild
-            cleanStaleWebpackAssets: true,
-            protectWebpackAssets: false,
         }),
     ],
 };
