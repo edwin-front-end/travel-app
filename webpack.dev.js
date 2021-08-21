@@ -8,9 +8,8 @@ module.exports = {
     devtool: "inline-source-map",
     entry: "./src/client/index.js",
     output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "dist"),
-        publicPath: "/",
+        libraryTarget: "var",
+        library: "Client",
     },
 
     module: {
