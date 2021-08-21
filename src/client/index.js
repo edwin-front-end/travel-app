@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { tripPlanner } from "./js/tripPlanner";
+import { submitFunc } from "./js/tripPlanner";
 
 import "./styles/base.scss";
 import "./styles/input.scss";
@@ -9,4 +9,4 @@ import "./styles/reset.scss";
 import "./styles/typography.scss";
 import "./styles/card.scss";
 
-export { tripPlanner };
+export { submitFunc };

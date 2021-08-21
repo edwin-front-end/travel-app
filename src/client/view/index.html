@@ -25,7 +25,7 @@
                     />
                 </div>
                 <!-- *** *** *** Form *** *** *** -->
-                <form class="plan-form" action="">
+                <form class="plan-form" onsubmit="return Client.submitHandler">
                     <h1>Start planning your trip</h1>
                     <label for="input-location">Location</label>
                     <input
@@ -50,9 +50,8 @@
                     />
                     <button
                         type="submit"
+                        id="submitPlan"
                         class="btn btn-trip-plan"
-                        onclick="return Client.tripPlanner(event)"
-                        onsubmit="return Client.tripPlanner(event)"
                     >
                         SUBMIT
                     </button>
@@ -115,6 +114,6 @@
             <p id="footer-text">Web-Application develop by: Edwin Mensah</p>
         </footer>
 
-        <script src="bundle.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
