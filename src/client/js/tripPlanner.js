@@ -20,13 +20,14 @@ function submitFunc(event) {
     // Get locations from API
     async function getLocationsData() {
         let cityLocation = {};
-        let cityName = "london";
+        let cityName = document.getElementById("input-location").value;
         const geonamesUserName = "eddyudacity";
         const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
         try {
             const response = await fetch(geonamesURL);
             cityLocation = await response.json();
-            console.log(cityLocation);
+            const latitude = cityLocation.geonames[0].lat;
+            const longitude = cityLocation.geonames[0].lng;
         } catch (error) {
             console.log("error");
         }
