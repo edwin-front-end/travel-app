@@ -1,6 +1,6 @@
 import "@babel/polyfill";
 import _ from "lodash";
-import { submitFunc } from "./js/tripPlanner";
+import { submitFunc } from "./js/formHandler";
 
 import "../../assets/Group 105.svg";
 import "../../assets/Group 105@2x.svg";

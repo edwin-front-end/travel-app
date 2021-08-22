@@ -11,42 +11,38 @@
 //*** 1. Create an event listener that will listen when the submit button is clicked
 //*** 2. Send the data to the API
 //*** 3. Render data on cards created dynamically
+// import { submitFunc } from "./formHandler";
 
-document.getElementById("submitPlan").addEventListener("click", submitFunc);
+// document.getElementById("submitPlan").addEventListener("click", submitFunc);
 
-function submitFunc(event, getLocation) {
-    event.preventDefault();
+// function submitFunc(event) {
+//     event.preventDefault();
 
-    //*** API call
-    console.log("btn clicked");
-    let locationData = {};
-    let cityName = document.getElementById("input-location").value;
+//     //*** API call
+//     console.log("btn clicked");
+//     let locationData = {};
+//     let cityName = document.getElementById("input-location").value;
 
-    const geonamesUserName = "eddyudacity";
-    const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
+//     const geonamesUserName = "eddyudacity";
+//     const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
 
-    const getLocation = async (URL) => {
-        const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
-        const res = await fetch(geonamesURL);
-        try {
-            const locationData = await res.json();
-            console.log(locationData);
-            return locationData;
-        } catch (error) {
-            console.log("error", error);
-        }
-        console.log(locationData);
-    };
+//     const getLocation = async (URL) => {
+//         const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
+//         const res = await fetch(geonamesURL);
+//         try {
+//             const locationData = await res.json();
+//             console.log(locationData);
+//             return locationData;
+//         } catch (error) {
+//             console.log("error", error);
+//         }
+//         console.log(locationData);
+//     };
 
-    // getLocation();
-    // getLocation(geonamesURL).then((data) => {
-    //     postData("/location", {
-    //         latitude: data.geonames[0].lat,
-    //         longitude: data.geonames[0].lng,
-    //     }).then(() => {});
-    //     // .then(updateUI());
-    // });
-}
+//     getLocation();
+
+// }
+
 // Async function to fetch data from API and translated in a JSON format
 
 // Async function to Post data on the server
@@ -82,5 +78,10 @@ function submitFunc(event, getLocation) {
 //         console.log("error");
 //     }
 // }
-
-// getLocationsData();
+// getLocation(geonamesURL).then((data) => {
+//     postData("/location", {
+//         latitude: data.geonames[0].lat,
+//         longitude: data.geonames[0].lng,
+//     }).then(() => {});
+//     // .then(updateUI());
+// });
