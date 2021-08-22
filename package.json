@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/server/server.js",
+    "server": "nodemon src/server/server.js",
     "build-dev": "webpack serve --config webpack.dev.js --open",
     "build-prod": "webpack --config webpack.prod.js",
     "watch": "webpack --watch"
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/edwin-front-end/travel-app#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",

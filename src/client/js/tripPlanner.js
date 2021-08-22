@@ -14,67 +14,73 @@
 
 document.getElementById("submitPlan").addEventListener("click", submitFunc);
 
-function submitFunc(event) {
+function submitFunc(event, getLocation) {
     event.preventDefault();
 
-    // Get locations from API
-    async function getLocationsData() {
-        let cityLocation = {};
-        let cityName = document.getElementById("input-location").value;
-        const geonamesUserName = "eddyudacity";
+    //*** API call
+    console.log("btn clicked");
+    let locationData = {};
+    let cityName = document.getElementById("input-location").value;
+
+    const geonamesUserName = "eddyudacity";
+    const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
+
+    const getLocation = async (URL) => {
         const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
+        const res = await fetch(geonamesURL);
         try {
-            const response = await fetch(geonamesURL);
-            cityLocation = await response.json();
-            const latitude = cityLocation.geonames[0].lat;
-            const longitude = cityLocation.geonames[0].lng;
+            const locationData = await res.json();
+            console.log(locationData);
+            return locationData;
         } catch (error) {
-            console.log("error");
+            console.log("error", error);
         }
-    }
+        console.log(locationData);
+    };
 
-    getLocationsData();
+    // getLocation();
+    // getLocation(geonamesURL).then((data) => {
+    //     postData("/location", {
+    //         latitude: data.geonames[0].lat,
+    //         longitude: data.geonames[0].lng,
+    //     }).then(() => {});
+    //     // .then(updateUI());
+    // });
 }
+// Async function to fetch data from API and translated in a JSON format
 
-//*** day counter
+// Async function to Post data on the server
+// const postData = async (url = "", data = {}) => {
+//     console.log(data);
+//     const response = await fetch(url, {
+//         method: "POST",
+//         credentials: "same-origin",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(data),
+//     });
+//     try {
+//         const locationData = await response.json();
+//         // console.log(locationData);
+//     } catch {
+//         console.log("error", error);
+//     }
+// };
 
-(function () {
-    const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
+// async function getLocationsData() {
+//     let cityLocation = {};
+//     let cityName = document.getElementById("input-location").value;
+//     const geonamesUserName = "eddyudacity";
+//     const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
+//     try {
+//         const response = await fetch(geonamesURL);
+//         cityLocation = await response.json();
+//         console.log(cityLocation.geonames[0].lat);
+//         console.log(cityLocation.geonames[0].lng);
+//     } catch (error) {
+//         console.log("error");
+//     }
+// }
 
-    let birthday = "Sep 30, 2021 00:00:00",
-        countDown = new Date(birthday).getTime(),
-        x = setInterval(function () {
-            let now = new Date().getTime(),
-                distance = countDown - now;
-
-            (document.getElementById("days").innerText = Math.floor(
-                distance / day
-            )),
-                (document.getElementById("hours").innerText = Math.floor(
-                    (distance % day) / hour
-                )),
-                (document.getElementById("minutes").innerText = Math.floor(
-                    (distance % hour) / minute
-                )),
-                (document.getElementById("seconds").innerText = Math.floor(
-                    (distance % minute) / second
-                ));
-
-            //do something later when date is reached
-            if (distance < 0) {
-                let headline = document.getElementById("headline"),
-                    countdown = document.getElementById("countdown"),
-                    content = document.getElementById("content");
-
-                headline.innerText = "It's my birthday!";
-                countdown.style.display = "none";
-                content.style.display = "block";
-
-                clearInterval(x);
-            }
-            //seconds
-        }, 0);
-})();
+// getLocationsData();
