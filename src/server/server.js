@@ -1,6 +1,5 @@
-// Geonames API
-let cityName = "london";
-const geonamesUserName = "eddyudacity";
+// const dotenv = require("dotenv");
+// dotenv.config();
 
 const express = require("express");
 const webpack = require("webpack");
@@ -35,7 +34,20 @@ app.listen(port, (req, res) => {
 });
 
 app.get("/", (req, res) => {
-    res.sendFile("dist");
+    res.sendFile("dist/index.html");
 });
 
-console.log("TESTING");
+// API calls
+// endpoint to store data
+let projectData = {};
+
+// request data to the openWeatherAPI
+app.post("/makeCalls", (req, res) => {
+    projectData = req.body;
+    console.log(projectData);
+});
+
+// send the data received to projectData object
+app.get("/data", (req, res) => {
+    res.send(projectData);
+});

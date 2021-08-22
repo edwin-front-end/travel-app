@@ -10,6 +10,7 @@ module.exports = {
     output: {
         libraryTarget: "var",
         library: "Client",
+        publicPath: "/",
     },
 
     module: {

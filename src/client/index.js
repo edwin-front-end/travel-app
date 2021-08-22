@@ -1,5 +1,10 @@
+import "@babel/polyfill";
 import _ from "lodash";
-import { submitFunc } from "./js/tripPlanner";
+import { submitFunc } from "./js/formHandler";
+
+import "../../assets/Group 105.svg";
+import "../../assets/Group 105@2x.svg";
+import "../../assets/light_mode_black_24dp.svg";
 
 import "./styles/base.scss";
 import "./styles/input.scss";
