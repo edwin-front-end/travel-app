@@ -1,6 +1,7 @@
 import "@babel/polyfill";
 import _ from "lodash";
-import { submitFunc } from "./js/formHandler";
+import { submitPlan } from "./js/formHandler";
+import { postData } from "./js/routing";
 
 import "../../assets/Group 105.svg";
 import "../../assets/Group 105@2x.svg";
@@ -14,4 +15,5 @@ import "./styles/reset.scss";
 import "./styles/typography.scss";
 import "./styles/card.scss";
 
-export { submitFunc };
+export { submitPlan };
+export { postData };
