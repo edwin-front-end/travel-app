@@ -8,7 +8,7 @@ const geonamesUserName = "eddyudacity";
 const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
 
 //Form submission event listener
-submitPlan.addEventListener("click", function submitFunc(event) {
+submitPlan.addEventListener("click", (event) => {
     event.preventDefault();
     geonamesAPI();
 });
