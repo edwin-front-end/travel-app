@@ -1,37 +1,38 @@
 import { postData } from "./routing";
 
-// Global Variables / Selectors
-let cityName = document.getElementById("input-location").value;
-
-// Global Variables / API DATA
-const geonamesUserName = "eddyudacity";
-const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
-
-//Form submission event listener
-
+const submitPlan = document.getElementById("submitPlan");
 let locationData = {};
 
-// Fetch Geonames API
-async function geonamesAPI() {
-    await fetch(geonamesURL)
-        .then((res) => res.json())
-        .then((data) => {
-            return (locationData = {
-                latitude: data.geonames[0].lat,
-                longitude: data.geonames[0].lng,
+//Form submission event listener
+submitPlan.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    let cityName = document.getElementById("input-location").value;
+    const geonamesUserName = "eddyudacity";
+    const geonamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geonamesUserName}`;
+    const API_KEY = "0b1f8dc81435467e94fbd1e890247ac9";
+    const weatherbitApiURL = `https://api.weatherbit.io/v2.0/forecast/daily?key=${API_KEY}&lat=${locationData.lat}&lon=${locationData.lon}`;
+
+    async function geonamesAPI() {
+        await fetch(geonamesURL)
+            .then((res) => res.json())
+            .then((data) => {
+                return (locationData = {
+                    lat: data.geonames[0].lat,
+                    lon: data.geonames[0].lng,
+                });
             });
-        })
-        .then(() => postData("/apiCalls", locationData));
-    console.log(locationData);
-}
+        // .then(() => postData("/apiCalls", locationData));
 
-export { geonamesAPI };
+        await fetch(weatherbitApiURL)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            });
+    }
+    geonamesAPI();
+});
 
-// async function geonamesAPI() {
-//     const res = await fetch(geonamesURL);
-//     const locationData = await res.json();
-//     console.log(locationData);
-//     return locationData;
-// }
-//         console.log(cityLocation.geonames[0].lat);
-//         console.log(cityLocation.geonames[0].lng);
+// Fetch Geonames API
+
+export { submitPlan };

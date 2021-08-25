@@ -1,7 +1,7 @@
 import "@babel/polyfill";
 import _ from "lodash";
-import { submitPlan } from "./js/formHandler";
-import { geonamesAPI } from "./js/fetchAPI";
+import { submitPlan } from "./js/fetchAPI";
+
 import { postData } from "./js/routing";
 
 import "../../assets/Group 105.svg";
@@ -17,5 +17,5 @@ import "./styles/typography.scss";
 import "./styles/card.scss";
 
 export { submitPlan };
-export { geonamesAPI };
+
 export { postData };
