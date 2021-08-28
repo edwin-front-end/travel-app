@@ -6,9 +6,6 @@ const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const bodyParser = require("body-parser");
 
-const dotenv = require("dotenv");
-dotenv.config();
-
 const app = express();
 const config = require("../../webpack.prod");
 const compiler = webpack(config);
@@ -37,12 +34,15 @@ app.get("/", (req, res) => {
     res.sendFile("dist/index.html");
 });
 
-// API calls
 // endpoint to store data
 let projectData = {};
 
 // request data to the openWeatherAPI
-app.post("/apiCalls", (req, res) => {
+app.post("/APICalls", (req, res) => {
     projectData = req.body;
     console.log(projectData);
+});
+
+app.get("/APIData", (req, res) => {
+    res.send(projectData);
 });
