@@ -40,12 +40,14 @@ submitPlan.addEventListener("click", (event) => {
         await fetch(weatherBitApiURL)
             .then((res) => res.json())
             .then((data) => {
+                console.log(data);
                 weatherData = {
                     weatherDescription: data.data[0].weather.description,
                     weatherIcon: data.data[0].weather.icon,
                     weatherHighTemp: data.data[0].high_temp,
                     weatherLowTemp: data.data[0].low_temp,
                     weatherDateTime: data.data[0].datetime,
+                    cityName: data.city_name,
                 };
             });
 
@@ -59,6 +61,7 @@ submitPlan.addEventListener("click", (event) => {
             })
             .then(() => {
                 projectData = {
+                    cityName: weatherData.cityName,
                     weatherDescriptionData: weatherData.weatherDescription,
                     weatherIconData: weatherData.weatherIcon,
                     weatherHighTempData: weatherData.weatherHighTemp,

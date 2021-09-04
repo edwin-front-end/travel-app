@@ -36,14 +36,11 @@ header {
 }
 
 .travel-information-section {
-    display: grid;
-    grid-template-columns: 1fr 400px 1fr;
-    grid-template-rows: 3fr 600px;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: stretch;
-    align-items: stretch;
-    margin-bottom: 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8em 4em;
 }
 
 #trip-plan-header {
