@@ -11,6 +11,7 @@ const updateUI = async () => {
     try {
         const projectData = await req.json();
 
+        //Data
         let imgURL = projectData.pixaBayData;
         let highDeg = projectData.weatherHighTempData;
         let lowDeg = projectData.weatherLowTempData;
@@ -18,7 +19,13 @@ const updateUI = async () => {
         let weatherDescription = projectData.weatherDescriptionData;
         let iconData = projectData.weatherIconData;
 
-        let section = document.querySelector(".travel-information-section");
+        // Selectors
+        let sectionCardInfo = document.querySelector(
+            ".travel-information-section"
+        );
+        let sectionCountdown = document.querySelector(".countdown-section");
+
+        // Card variables
         let cardElement = document.createElement("div");
         let imageElement = document.createElement("img");
         let headingElement = document.createElement("h3");
@@ -29,13 +36,16 @@ const updateUI = async () => {
         let weatherLowDeg = document.createElement("p");
         let btnElement = document.createElement("button");
         let icon = document.createElement("img");
+        let removeBtn = document.createElement("button");
 
+        //Class
         cardElement.className = "card-wrapper";
         imageElement.className = "image-element";
         icon.className = "icon-element";
         headingElement.className = "card-heading";
         infoElement.className = "info-element";
         btnElement.className = "btn";
+        removeBtn.className = "remove-btn";
 
         headingElement.innerText = "Your destination";
         imageElement.src = imgURL;
@@ -44,9 +54,15 @@ const updateUI = async () => {
         weatherInfo.innerText = weatherDescription;
         weatherHighDeg.innerText = `Max Deg: ${highDeg}`;
         weatherLowDeg.innerText = `Min Deg: ${lowDeg}`;
+        removeBtn.innerText = "Remove";
 
-        section.appendChild(cardElement);
-        cardElement.append(headingElement, imageElement, infoElement);
+        sectionCardInfo.appendChild(cardElement);
+        cardElement.append(
+            headingElement,
+            imageElement,
+            infoElement,
+            removeBtn
+        );
         infoElement.append(
             city,
             weatherInfo,
@@ -54,6 +70,11 @@ const updateUI = async () => {
             weatherHighDeg,
             weatherLowDeg
         );
+
+        // Remove card
+        removeBtn.addEventListener("click", function () {
+            cardElement.remove(cardElement);
+        });
     } catch (error) {
         console.log("error", error);
     }

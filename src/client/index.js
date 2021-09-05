@@ -1,7 +1,8 @@
 import _ from "lodash";
 
 import { submitPlan } from "./js/fetchAPI";
-import { postData } from "./js/routing";
+import { postData } from "./js/postFunc";
+import { addItem } from "./js/todo";
 
 import "../../assets/Group 105.svg";
 import "../../assets/Group 105@2x.svg";
@@ -14,6 +15,8 @@ import "./styles/form.scss";
 import "./styles/reset.scss";
 import "./styles/typography.scss";
 import "./styles/card.scss";
+import "./styles/mediaQueries.scss";
 
 export { submitPlan };
 export { postData };
+export { addItem };

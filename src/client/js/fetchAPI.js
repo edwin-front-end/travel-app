@@ -1,7 +1,7 @@
 // const dotenv = require("dotenv");
 // dotenv.config();
 
-import { postData } from "./routing";
+import { postData } from "./postFunc";
 import { updateUI } from "./updateUI";
 
 const submitPlan = document.getElementById("submitPlan");

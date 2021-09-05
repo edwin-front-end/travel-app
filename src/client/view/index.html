@@ -18,12 +18,32 @@
             <!-- *** *** *** Hero section *** *** *** -->
 
             <section class="hero">
+                <div class="small-container">
+                    <form class="plan-form">
+                        <h2>Make a list for your trip</h2>
+                        <input
+                            id="item"
+                            class="input"
+                            type="text"
+                            placeholder="New"
+                        />
+
+                        <h2>Items</h2>
+                        <ul></ul>
+
+                        <button id="clear-btn" class="btn">Clear All</button>
+                        <button id="add-item" class="btn" type="submit">
+                            Add item
+                        </button>
+                    </form>
+                </div>
+                <!--  
                 <div class="hero-img-container">
                     <img
                         src="../../../assets/Group 105.svg"
                         alt="illustrations of a person using laptop"
                     />
-                </div>
+                </div> -->
                 <!-- *** *** *** Form *** *** *** -->
                 <form class="plan-form" onsubmit="return Client.submitHandler">
                     <h1>Start planning your trip</h1>
@@ -53,7 +73,7 @@
                         id="submitPlan"
                         class="btn btn-trip-plan"
                     >
-                        SUBMIT
+                        Add trip
                     </button>
                 </form>
             </section>
@@ -61,6 +81,7 @@
             <!-- *** *** *** Travel information section *** *** *** -->
 
             <section class="travel-information-section"></section>
+            <section class="countdown-section"></section>
         </main>
         <footer>
             <p id="footer-text">Web-Application develop by: Edwin Mensah</p>

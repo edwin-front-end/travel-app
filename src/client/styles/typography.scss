@@ -21,7 +21,7 @@ h1 {
     font-size: 4.2rem;
     font-weight: 900;
     color: var(--alternative-space-cadet);
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     line-height: 1;
 }
 
@@ -40,15 +40,16 @@ h3 {
 }
 
 p,
+li,
 span {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     font-weight: 400;
     color: var(--rhythm);
     margin-bottom: 0.2em;
 }
 
 label {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: var(--rhythm);
     margin-bottom: 0.5em;
