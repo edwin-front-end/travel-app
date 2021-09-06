@@ -40,7 +40,6 @@ let projectData = {};
 // request data to the openWeatherAPI
 app.post("/APICalls", (req, res) => {
     projectData = req.body;
-    console.log(projectData);
 });
 
 app.get("/APIData", (req, res) => {
