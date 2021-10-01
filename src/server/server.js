@@ -40,6 +40,7 @@ let projectData = {};
 // request data to the openWeatherAPI
 app.post("/APICalls", (req, res) => {
     projectData = req.body;
+    res.end(); // end the request-response cycle
 });
 
 app.get("/APIData", (req, res) => {

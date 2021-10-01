@@ -71,7 +71,7 @@ submitPlan.addEventListener("click", async (event) => {
             // post data to server
             // postData("http://localhost:3000/APICalls", projectData);
         })
-        .then(postData("http://localhost:3000/APICalls", projectData))
+        .then(() => postData("http://localhost:3000/APICalls", projectData))
         .then(updateUI);
 });
 

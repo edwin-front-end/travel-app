@@ -7,7 +7,7 @@ import { submitPlan } from "./fetchAPI";
 // const icon = document.getElementById("icon-weather");
 
 const updateUI = async () => {
-    const req = await fetch("/APIData");
+    const req = await fetch("http://localhost:3000/APIData");
     try {
         const projectData = await req.json();
 
