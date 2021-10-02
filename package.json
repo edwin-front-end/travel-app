@@ -1,10 +1,13 @@
 {
   "name": "travel-app",
   "version": "1.0.0",
+  "jest": {
+    "verbose": true
+  },
   "description": "Travel Application - Udacity capstone",
   "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "server": "nodemon src/server/server.js",
     "build-dev": "webpack serve --config webpack.dev.js --open",
     "build-prod": "webpack --config webpack.prod.js",
@@ -37,10 +40,12 @@
     "extract-loader": "^5.1.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.2.4",
     "nodemon": "^2.0.13",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
+    "supertest": "^6.1.6",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-middleware": "^3.7.3",

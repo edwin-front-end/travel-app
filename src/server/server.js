@@ -1,6 +1,3 @@
-// const dotenv = require("dotenv");
-// dotenv.config();
-
 const express = require("express");
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
@@ -25,9 +22,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("dist"));
 
-const port = 3000;
-app.listen(port, (req, res) => {
-    console.log(`server is running on port ${port}`);
+// const port = 3000;
+// app.listen(port, (req, res) => {
+//     console.log(`server is running on port ${port}`);
+// });
+
+app.get("/test", async (req, res) => {
+    res.json({ message: "pass!" });
 });
 
 app.get("/", (req, res) => {
@@ -46,3 +47,5 @@ app.post("/APICalls", (req, res) => {
 app.get("/APIData", (req, res) => {
     res.send(projectData);
 });
+
+module.exports = app;

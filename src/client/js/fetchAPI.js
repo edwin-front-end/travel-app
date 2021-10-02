@@ -1,6 +1,3 @@
-// const dotenv = require("dotenv");
-// dotenv.config();
-
 import { postData } from "./postFunc";
 import { updateUI } from "./updateUI";
 
@@ -20,8 +17,6 @@ submitPlan.addEventListener("click", async (event) => {
     const geoNamesURL = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=10&username=${geoNamesUserName}`;
     const weatherBit_API_KEY = "0b1f8dc81435467e94fbd1e890247ac9";
     const pixabay_API_KEY = "13550549-5127aa79732ce2a8df476eff6";
-    const startDate = document.getElementById("input-arrival-date").value;
-    const endDate = document.getElementById("input-departure-date").value;
 
     // Fetch geonames API
     await fetch(geoNamesURL)
@@ -34,7 +29,7 @@ submitPlan.addEventListener("click", async (event) => {
         });
 
     // Fetch weatherBit API
-    const weatherBitApiURL = `https://api.weatherbit.io/v2.0/forecast/daily?key=${weatherBit_API_KEY}&lat=${geoNamesData.lat}&lon=${geoNamesData.lon}&start_date=${startDate}&end_date=${endDate}`;
+    const weatherBitApiURL = `https://api.weatherbit.io/v2.0/forecast/daily?key=${weatherBit_API_KEY}&lat=${geoNamesData.lat}&lon=${geoNamesData.lon}`;
 
     await fetch(weatherBitApiURL)
         .then((res) => res.json())

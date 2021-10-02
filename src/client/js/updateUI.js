@@ -1,11 +1,5 @@
 import { submitPlan } from "./fetchAPI";
 
-// const destination = document.getElementById("destination-text");
-// const date = document.getElementById("date-arrival-text");
-// const highTemp = document.getElementById("high-temp");
-// const lowTemp = document.getElementById("low-temp");
-// const icon = document.getElementById("icon-weather");
-
 const updateUI = async () => {
     const req = await fetch("http://localhost:3000/APIData");
     try {
@@ -18,12 +12,13 @@ const updateUI = async () => {
         let cityName = projectData.cityName;
         let weatherDescription = projectData.weatherDescriptionData;
         let iconData = projectData.weatherIconData;
-
+        let departureDate = document.getElementById(
+            "input-departure-date"
+        ).value;
         // Selectors
         let sectionCardInfo = document.querySelector(
             ".travel-information-section"
         );
-        let sectionCountdown = document.querySelector(".countdown-section");
 
         // Card variables
         let cardElement = document.createElement("div");
@@ -47,7 +42,7 @@ const updateUI = async () => {
         btnElement.className = "btn";
         removeBtn.className = "remove-btn";
 
-        headingElement.innerText = "Your destination";
+        headingElement.innerText = `Your trip start on ${departureDate}`;
         imageElement.src = imgURL;
         icon.src = `https://www.weatherbit.io/static/img/icons/${iconData}.png`;
         city.innerText = `Place: ${cityName}`;
