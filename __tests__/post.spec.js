@@ -1,9 +1,8 @@
 import "regenerator-runtime/runtime";
-
 import { postData } from "../src/client/js/postFunc";
 
-describe("testing the date countdown functionality", () => {
-    test("tests dateCountdown() function", () => {
+describe("testing the postData functionality", () => {
+    test("tests postData() function", () => {
         //    input
         // expected output
         // expect()
