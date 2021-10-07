@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("dist"));
 
-const port = 3000;
-app.listen(port, (req, res) => {
-    console.log(`server is running on port ${port}`);
-});
+// const port = 3000;
+// app.listen(port, (req, res) => {
+//     console.log(`server is running on port ${port}`);
+// });
 
 app.get("/test", async (req, res) => {
     res.json({ message: "pass!" });
