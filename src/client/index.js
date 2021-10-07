@@ -4,10 +4,6 @@ import { submitPlan } from "./js/fetchAPI";
 import { postData } from "./js/postFunc";
 import { addItem } from "./js/todo";
 
-import "../../assets/Group 105.svg";
-import "../../assets/Group 105@2x.svg";
-import "../../assets/light_mode_black_24dp.svg";
-
 import "./styles/base.scss";
 import "./styles/input.scss";
 import "./styles/button.scss";
