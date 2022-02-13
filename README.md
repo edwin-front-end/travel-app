@@ -2,9 +2,12 @@
 Capostone Udacity front end nanodegree
 
 ## API
-Geonames (Geolocation): http://www.geonames.org/source-code/javadoc/org/geonames/WebService.html
-Weatherbit (Weather info): https://www.weatherbit.io/
+Geonames (Geolocation): http://www.geonames.org/source-code/javadoc/org/geonames/WebService.html   
+Weatherbit (Weather info): https://www.weatherbit.io/   
 Pixabay (Location images): https://pixabay.com/
+
+
+
 
 ## Technologies used
 HTML   
